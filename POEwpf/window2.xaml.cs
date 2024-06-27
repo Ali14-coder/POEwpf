@@ -114,15 +114,15 @@ namespace POEwpf
             MessageBox.Show("Recipe successfully added");
         }
 
-        //private void btnDisplayRecipe_Click(object sender, RoutedEventArgs e)
-        //{
-        //    window3 panel3 = new window3(panel2);
-        //    this.Hide();
-        //    panel3.Show();
+        private void btnDisplayRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            window3 panel3 = new window3(panel2);
+            this.Hide();
+            panel3.Show();
 
-        //    panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
-        //    panel3.txtRecipeName2.Text = recentRecipe.RecipeName;  
-        //}
+            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+            panel3.txtRecipeName2.Text = recentRecipe.RecipeName;
+        }
 
         public SortedList<string, Recipes> GetSortedRecipesList()
         {

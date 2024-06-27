@@ -21,8 +21,8 @@ namespace POEwpf
     {
         public Recipes recipes;
         public Recipes recentRecipe;
-        public Steps steps;
-        public Ingredients ingredients;
+        //public Steps steps;
+        //public Ingredients ingredients;
 
         public SortedList<string, Recipes> SortedRecipesList; //(user1153537, 2024)
         public List<Ingredients> IngredientsList;

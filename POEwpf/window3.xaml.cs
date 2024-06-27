@@ -19,21 +19,11 @@ namespace POEwpf
     /// </summary>
     public partial class window3 : Window
     {
-        public Recipes recipes;
-        public Recipes recentRecipe;
-        public Steps steps;
-        public Ingredients ingredients;
-
-        public SortedList<string, Recipes> SortedRecipesList; //(user1153537, 2024)
-        public List<Ingredients> IngredientsList;
-        public List<Steps> StepsList;
 
         private window2 panel2;
 
         public window3(window2 Panel2)
         {
-            SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
-                                                                   //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
 
             panel2 = Panel2;

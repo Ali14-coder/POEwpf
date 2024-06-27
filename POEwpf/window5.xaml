@@ -11,7 +11,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Images/RecpDetails3.jpg"/>
             </Grid.Background>
-            <Button x:Name="btnExit5" Content="Exit" HorizontalAlignment="Left" Margin="435,598,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="97" Click="btnExit5_Click" Height="30"/>
+            <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="417,598,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="115" Click="btnMenu_Click" Height="30"/>
             <Button x:Name="btnViewRecipe" Content="View recipe" HorizontalAlignment="Left" Margin="198,192,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="42" Width="119" Click="btnViewRecipe_Click"/>
             <Button x:Name="btnBackToViewRecipe" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Click="btnBackToViewRecipe_Click" Height="54" Width="30"/>
             <Label x:Name="lbDisplaySelectedRecipe" Content="..." HorizontalAlignment="Left" Margin="45,261,0,0" VerticalAlignment="Top" FontSize="16" Height="287" Width="448" Background="#FFA7A8AA"/>

@@ -38,12 +38,12 @@ namespace POEwpf
 
             SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
 
-            panel5.lbRecipeOptions.Items.Add(""); //makes listbox empty
+            lbRecipeOptions.Items.Add(""); //makes listbox empty
 
             int index = 1;
             foreach (var recipeName in SortedRecipesList.Keys) //this is meant to show a number next to each recipeName called from the SortedList
             {
-                panel5.lbRecipeOptions.Items.Add(index + ". " + recipeName);
+                lbRecipeOptions.Items.Add(index + ". " + recipeName);
                 index++;
             }
         }
@@ -86,6 +86,13 @@ namespace POEwpf
             MainWindow panel1 = new MainWindow();
             this.Hide();
             panel1.Show();
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            window7 panel7 = new window7(panel2);
+            this.Hide();
+            panel7.Show();
         }
     }
 }

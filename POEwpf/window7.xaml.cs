@@ -46,8 +46,8 @@ namespace POEwpf
             this.Hide();
             panel3.Show();
 
-            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
-            panel3.txtRecipeName2.Text = recentRecipe.RecipeName;
+            panel3.lbDisplayIngreAndSteps.Content = panel2.recentRecipe.PrintRecipe();
+            panel3.txtRecipeName2.Text = panel2.recentRecipe.RecipeName;
         }
 
         private void btnChooseRecipe_Click(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace POEwpf
 
         private void btnFilterRecipe_Click(object sender, RoutedEventArgs e)
         {
-            window6 panel6 = new window6();
+            window6 panel6 = new window6(panel2);
             this.Hide();
             panel6.Show();
         }
