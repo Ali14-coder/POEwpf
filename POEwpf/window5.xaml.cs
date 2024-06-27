@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,13 +29,11 @@ namespace POEwpf
         public List<Ingredients> IngredientsList;
         public List<Steps> StepsList;
 
-        private window2 panel2;
-        public window5(window2 Panel2)
+        private window2 panel2; //(Zingo, 2024)
+        public window5(window2 Panel2) //(Zingo, 2024)
         {
-          //  SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
-                                                                   //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
-            panel2 = Panel2;
+            panel2 = Panel2; //(Zingo, 2024)
 
             // PopulateRecipeListBox();
             SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
@@ -66,17 +65,17 @@ namespace POEwpf
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-            int selectedIndex = lbRecipeOptions.SelectedIndex;
+            int selectedIndex = lbRecipeOptions.SelectedIndex; //this is an indicator for the selected index  
 
-            if (selectedIndex == -1)
+            if (selectedIndex == -1) //if statment determing if selection was out of range
             {
                 MessageBox.Show("Recipe number out of range. Please re-select");
                 return;
             }
 
-            string recipeName = lbRecipeOptions.SelectedItem.ToString();
+            string recipeName = lbRecipeOptions.SelectedItem.ToString(); //converts to string
 
-            if (SortedRecipesList.ContainsKey(recipeName))
+            if (SortedRecipesList.ContainsKey(recipeName))//obtains the recipeName from sortedlist
             {
                 Recipes selectedRecipe = SortedRecipesList[recipeName];
                 lbDisplaySelectedRecipe.Content = "Recipe: " + selectedRecipe.RecipeName + "\n";
@@ -92,3 +91,5 @@ namespace POEwpf
         }
     }
 }
+//Refereces:
+//Zingo (2024). Initializing a WPF-window with an optional parameter. [online] Stack Overflow. Available at: https://stackoverflow.com/questions/26246293/initializing-a-wpf-window-with-an-optional-parameter [Accessed 27 Jun. 2024].

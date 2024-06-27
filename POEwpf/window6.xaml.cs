@@ -55,8 +55,8 @@ namespace POEwpf
             lbDisplayFilteredRecipes6.ItemsSource = FilteredRecipesObservableCollection;
 
           //  tbFilterByTextIngre.TextChanged += OnFilterChanged;
-            cbFoodGroup.SelectionChanged += OnSelectedChanged;
-          //  tbFilterByTextCalories.TextChanged += OnFilterChanged;
+            cbFoodGroup.SelectionChanged += OnSelectedChanged; //(Naish, 2024)
+           //  tbFilterByTextCalories.TextChanged += OnFilterChanged;
         }
        
         private void btnMenu_Click(object sender, RoutedEventArgs e)
@@ -77,7 +77,7 @@ namespace POEwpf
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
             
-            FilterApplication();
+            FilterApplication(); //(jwmsft, 2024)
 
         }
       
@@ -88,7 +88,7 @@ namespace POEwpf
             RepopulateFilteredRecipes(filterer); //(jwmsft, 2024)
             DisplayFilteredRecipes(filterer);
         }
-        private bool Filtering(Recipes recipe)
+        private bool Filtering(Recipes recipe) //this method filters in all the matches, ignoring case
         {
             bool ingredientMatch = string.IsNullOrEmpty(tbFilterByTextIngre.Text) || recipe.IngredientsList.Any(ingredient => ingredient.IngredientName.Contains(tbFilterByTextIngre.Text, StringComparison.InvariantCultureIgnoreCase));
 
@@ -111,7 +111,7 @@ namespace POEwpf
             } //(jwmsft, 2024)
         }
 
-        private void RepopulateFilteredRecipes(IEnumerable<Recipes> recipeFilter)
+        private void RepopulateFilteredRecipes(IEnumerable<Recipes> recipeFilter) //this method determines whether any matches were missed, and adds them
         {
             foreach (var item in recipeFilter)
             {
@@ -129,12 +129,8 @@ namespace POEwpf
                 FilteredRecipesObservableCollection.Add(recipe); 
             }
         }
-        private void cbFoodGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // When the selection in cbFoodGroup changes, reapply the filter
-            FilterApplication();
-        }
-        private void btnClear_Click(object sender, RoutedEventArgs e)
+
+        private void btnClear_Click(object sender, RoutedEventArgs e) //this method restores the filtering page to how it was for a new filter to begin
         {
             FilteredRecipesObservableCollection.Clear();
             tbFilterByTextCalories.Text = "";
@@ -145,3 +141,4 @@ namespace POEwpf
 }
 //References:
 //jwmsft(2024).Filtering collections - Windows apps. [online] Microsoft.com.Available at: https://learn.microsoft.com/en-us/windows/apps/design/controls/listview-filtering [Accessed 27 Jun. 2024].
+//Naish, A. (2024). Implementing a ListView Filter with Josh Smith’s WPF MVVM Demo App. [online] Stack Overflow. Available at: https://stackoverflow.com/questions/12188623/implementing-a-listview-filter-with-josh-smiths-wpf-mvvm-demo-app [Accessed 27 Jun. 2024].

@@ -38,7 +38,7 @@ namespace POEwpf
             panel2 = Panel2;
         }
 
-        private void btnBackToViewRecipe2_Click(object sender, RoutedEventArgs e)
+        private void btnBackToViewRecipe2_Click(object sender, RoutedEventArgs e) //back button
         {
             window3 panel3 = new window3(panel2);
             this.Hide();
@@ -47,7 +47,7 @@ namespace POEwpf
             panel3.Show();
         }
 
-        private void btnHalf_Click(object sender, RoutedEventArgs e)
+        private void btnHalf_Click(object sender, RoutedEventArgs e) //scale to half the quantites
         {
                 window3 panel3 = new window3(panel2);
 
@@ -70,7 +70,7 @@ namespace POEwpf
             }
         }
 
-        private void btnDouble_Click(object sender, RoutedEventArgs e)
+        private void btnDouble_Click(object sender, RoutedEventArgs e)//scale to double the quantites
         {
            
                 window3 panel3 = new window3(panel2);
@@ -94,7 +94,7 @@ namespace POEwpf
             }
         }
 
-        private void btnTriple_Click(object sender, RoutedEventArgs e)
+        private void btnTriple_Click(object sender, RoutedEventArgs e)//scale to triple the quantites
         {
                 window3 panel3 = new window3(panel2);
 
@@ -118,7 +118,7 @@ namespace POEwpf
         }
 
 
-        private void btnResetRecipe_Click(object sender, RoutedEventArgs e)
+        private void btnResetRecipe_Click(object sender, RoutedEventArgs e)//scale to reset the quantites
         {
            
                 window3 panel3 = new window3(panel2);
