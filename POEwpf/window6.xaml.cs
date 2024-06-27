@@ -38,9 +38,26 @@ namespace POEwpf
             InitializeComponent();
             this.panel2 = panel2;
 
-            SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
-            FilteredRecipesList = new ObservableCollection<Recipes>(SortedRecipesList.Values);
-            FilteredItemsControl.ItemsSource = SortedRecipesList;
+            ////One recipe populated
+            //IngredientsList.Add(new Ingredients("Flour", 500, "grams", "Carbs & Grains", 50, "Bread"));
+            //IngredientsList.Add(new Ingredients("Sugar", 200, "grams", "Sugar", 90, "Bread"));
+            //IngredientsList.Add(new Ingredients("Yeast", 0.25, "tbs", "Carbs & Grains", 10, "Bread"));
+
+            //StepsList.Add(new Steps("Sift flour into bowl."));
+            //StepsList.Add(new Steps("Slowly add sugar."));
+            //StepsList.Add(new Steps("Mix the yeast into the mixture."));
+
+            ////Second recipe populated
+            //IngredientsList.Add(new Ingredients("All purpose flour", 555, "grams", "Carbs & Grains", 65, "Cookies"));
+            //IngredientsList.Add(new Ingredients("Chocolate chips", 1, "cup", "Sugar", 230, "Cookies"));
+
+            //StepsList.Add(new Steps("Sift flour carefully into bowl."));
+            //StepsList.Add(new Steps("Pour the chocolate chips into the mixture."));
+            //StepsList.Add(new Steps("Mix together."));
+
+            //SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
+            //FilteredRecipesList = new ObservableCollection<Recipes>(SortedRecipesList.Values);
+            //FilteredItemsControl.ItemsSource = SortedRecipesList;
 
             
         }
@@ -66,22 +83,30 @@ namespace POEwpf
         {
             lbFilterOoptionLabel.Content = "Enter maximum calories:";
         }
+        private void OnFilterChanged(object sender, TextChangedEventArgs args)
+        {
+            FilterApplication(); //(jwmsft, 2024)
+        }
 
+        private void OnFilterChanged(object sender, SelectionChangedEventArgs args)
+        {
+            FilterApplication(); //(jwmsft, 2024)
+        }
         private void FilterApplication()
         {
             var filterer = SortedRecipesList.Values.Where(recipe => Filtering(ingredients, recipe));
             FilterOutNonMatches(filterer);
-            RepopulateFilteredRecipes(filterer);
+            RepopulateFilteredRecipes(filterer); //(jwmsft, 2024)
         }
         private bool Filtering(Ingredients ingredients, Recipes recipe)
         {
-            bool ingredientMatch = string.IsNullOrEmpty(tbFilterByTextIngre.Text) || recipe.IngredientsList.Any(ingredient => ingredient.Contains(tbFilterByTextIngre.Text, StringComparison.InvariantCultureIgnoreCase));
+            bool ingredientMatch = string.IsNullOrEmpty(tbFilterByTextIngre.Text) || recipe.IngredientsList.Any(ingredient => ingredient.IngredientName.Contains(tbFilterByTextIngre.Text, StringComparison.InvariantCultureIgnoreCase));
 
             bool foodGroupMatch = string.IsNullOrEmpty(cbFoodGroup.Text) || ingredients.FoodGroup.Contains(cbFoodGroup.Text, StringComparison.InvariantCultureIgnoreCase);
 
             bool maxCalorieMatch = string.IsNullOrEmpty(tbFilterByTextCalories.Text) || ingredients.Calories <= int.Parse(tbFilterByTextCalories.Text);
 
-            return ingredientMatch && foodGroupMatch && maxCalorieMatch;
+            return ingredientMatch && foodGroupMatch && maxCalorieMatch; //(jwmsft, 2024)
         }
 
         private void FilterOutNonMatches(IEnumerable<Recipes> recipeFilter) //method to remove any recipes that do not match the user's input
@@ -93,7 +118,7 @@ namespace POEwpf
                 {
                     FilteredRecipesList.Remove(item); 
                 }
-            }
+            } //(jwmsft, 2024)
         }
 
         private void RepopulateFilteredRecipes(IEnumerable<Recipes> recipeFilter)
@@ -105,7 +130,7 @@ namespace POEwpf
                     FilteredRecipesList.Add(item); //If exact match is not within the FilteredRecipeList, then it must be added
                 }
             }
-        }
+        } //(jwmsft, 2024)
     }
 }
 //References:

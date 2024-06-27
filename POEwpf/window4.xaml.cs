@@ -42,7 +42,7 @@ namespace POEwpf
         {
             window3 panel3 = new window3(panel2);
             this.Hide();
-            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+            panel3.lbRecipeDisplay2.Content = recentRecipe.PrintRecipe();
             panel3.txtRecipeName2.Text = recentRecipe.RecipeName;
             panel3.Show();
         }
@@ -57,7 +57,7 @@ namespace POEwpf
             if (recentRecipe != null)
             {
                 recentRecipe.ScalingTheRecipe(scaleFactor);
-                panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+                panel3.lbRecipeDisplay2.Content = recentRecipe.PrintRecipe();
 
                 this.Hide();
                 panel3.Show();
@@ -81,7 +81,7 @@ namespace POEwpf
             if (recentRecipe != null)
             {
                 recentRecipe.ScalingTheRecipe(scaleFactor);
-                panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+                panel3.lbRecipeDisplay2.Content = recentRecipe.PrintRecipe();
 
                 this.Hide();
                 panel3.Show();
@@ -104,7 +104,7 @@ namespace POEwpf
                 if (recentRecipe != null)
                 {
                 recentRecipe.ScalingTheRecipe(scaleFactor);
-                panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+                panel3.lbRecipeDisplay2.Content = recentRecipe.PrintRecipe();
 
                 this.Hide();
                 panel3.Show();
@@ -128,7 +128,7 @@ namespace POEwpf
             if (recentRecipe != null)
             {
                 panel2.recentRecipe.ResetRecipe();
-                panel3.lbDisplayIngreAndSteps.Content = panel2.recentRecipe.PrintRecipe();
+                panel3.lbRecipeDisplay2.Content = panel2.recentRecipe.PrintRecipe();
 
                 this.Hide();
                 panel3.Show();

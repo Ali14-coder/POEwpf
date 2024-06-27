@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POEwpf"
         mc:Ignorable="d"
-        Title="window6" Height="670" Width="575">
+        Title="window6" Height="670" Width="575"
+        WindowStartupLocation="CenterScreen">
     <Grid x:Name="panel1">
         <Grid.Background>
             <ImageBrush ImageSource="/infoPage3.jpg"/>
@@ -20,28 +21,29 @@
         <Label x:Name="lbFilterOoptionLabel" Content="Filter option label displayed here" HorizontalAlignment="Left" Margin="32,177,0,0" VerticalAlignment="Top" FontSize="16" Width="262" Height="36"/>
         <TextBox x:Name="tbFilterByTextIngre" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
         <TextBox x:Name="tbFilterByTextCalories" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
-
-        <Label x:Name="lbDisplayFilterRecipes" HorizontalAlignment="Left" Margin="56,262,0,0" VerticalAlignment="Top" FontSize="16" Width="467" Height="240" Background="#FFD9DDE0"/>
         <ComboBox x:Name="cbFoodGroup" SelectionChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="309,215,0,0" VerticalAlignment="Top" Width="241" FontSize="16">
             <ComboBoxItem Content="Carbs/Grains"/>
             <ComboBoxItem Content="Protein"/>
             <ComboBoxItem Content="Fats"/>
             <ComboBoxItem Content="Dairy"/>
             <ComboBoxItem Content="Fruit/Veg"/>
+            <ComboBoxItem Content="Root"/>
             <ComboBoxItem Content="Water"/>
         </ComboBox>
+        
+        <ListBox x:Name="lbDisplayFilteredRecipes6" HorizontalAlignment="Left" Height="240" Margin="32,288,0,0" VerticalAlignment="Top" Width="518" d:ItemsSource="{d:SampleData ItemCount=20}"/>
 
-        <ItemsControl x:Name="FilteredItemsControl">
+        <!--   <ItemsControl x:Name="FilteredItemsControl">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding RecipeName}"/>
+                        <TextBlock Text="{Binding IngredientName}"/>
                         <TextBlock Text="{Binding FoodGroup}"/>
                         <TextBlock Text="{Binding Calories}"/>
                         <TextBlock Text="{Binding Ingredients}"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        </ItemsControl> -->
     </Grid>
 </Window>

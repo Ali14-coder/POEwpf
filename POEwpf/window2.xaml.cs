@@ -34,23 +34,6 @@ namespace POEwpf
             SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
             InitializeComponent();
 
-            //One recipe populated
-            IngredientsList.Add(new Ingredients("Flour",500,"grams","Carbs & Grains",50,"Bread"));
-            IngredientsList.Add(new Ingredients("Sugar", 200, "grams", "Sugar",90, "Bread"));
-            IngredientsList.Add(new Ingredients("Yeast",0.25, "tbs", "Carbs & Grains", 10, "Bread"));
-
-            StepsList.Add(new Steps("Sift flour into bowl."));
-            StepsList.Add(new Steps("Slowly add sugar."));
-            StepsList.Add(new Steps("Mix the yeast into the mixture."));
-
-            //Second recipe populated
-            IngredientsList.Add(new Ingredients("All purpose flour", 555, "grams", "Carbs & Grains", 65, "Cookies"));
-            IngredientsList.Add(new Ingredients("Chocolate chips", 1, "cup", "Sugar", 230, "Cookies"));
-
-            StepsList.Add(new Steps("Sift flour carefully into bowl."));
-            StepsList.Add(new Steps("Pour the chocolate chips into the mixture."));
-            StepsList.Add(new Steps("Mix together."));
-
    
         }
 
@@ -137,7 +120,7 @@ namespace POEwpf
             this.Hide();
             panel3.Show();
 
-            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+            panel3.lbRecipeDisplay2.Content= recentRecipe.PrintRecipe();
             panel3.txtRecipeName2.Text = recentRecipe.RecipeName;
         }
 

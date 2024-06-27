@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POEwpf"
         mc:Ignorable="d"
-        Title="window4" Height="670" Width="575">
+        Title="window4" Height="670" Width="575"
+        WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush/>
     </Window.Background>

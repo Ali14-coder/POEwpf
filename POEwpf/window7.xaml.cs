@@ -26,17 +26,12 @@ namespace POEwpf
             this.panel2 = panel2;
         }
 
-        private void btnExit7_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow panel1 = new MainWindow();
-            this.Hide();
-            panel1.Show();
-        }
-
         private void btnScale_Click(object sender, RoutedEventArgs e)
         {
             window4 panel4 = new window4(panel2);
+            window3 panel3 = new window3(panel2);
             this.Hide();
+            panel2.txtRecipeName.Text = panel3.txtRecipeName2.Text;
             panel4.Show();
         }
 
@@ -46,7 +41,7 @@ namespace POEwpf
             this.Hide();
             panel3.Show();
 
-            panel3.lbDisplayIngreAndSteps.Content = panel2.recentRecipe.PrintRecipe();
+            panel3.lbRecipeDisplay2.Content = panel2.recentRecipe.PrintRecipe();
             panel3.txtRecipeName2.Text = panel2.recentRecipe.RecipeName;
         }
 
@@ -62,6 +57,13 @@ namespace POEwpf
             window6 panel6 = new window6(panel2);
             this.Hide();
             panel6.Show();
+        }
+
+        private void btnBackToAddRecipe2_Click(object sender, RoutedEventArgs e)
+        {
+            window2 panel2 = new window2();
+            this.Hide();
+            panel2.Show();
         }
     }
 }

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POEwpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="670" Width="575">
+        Title="MainWindow" Height="670" Width="575"
+        WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="/Images/recpDetails2.jpg"/>

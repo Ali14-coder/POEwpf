@@ -39,7 +39,7 @@ namespace POEwpf
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            lbDisplayIngreAndSteps.Content = ""; //MAKE INTO A LISTBOX
+            lbRecipeDisplay2.Content = ""; //MAKE INTO A LISTBOX
         }
 
         //private void btnScale_Click(object sender, RoutedEventArgs e)
