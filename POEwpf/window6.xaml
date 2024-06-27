@@ -8,44 +8,28 @@
         Title="window6" Height="670" Width="575"
         WindowStartupLocation="CenterScreen">
     <Grid x:Name="panel1">
-        <Image Source="/infoPage3.jpg" Stretch="Fill" />
 
-        <Grid>
-            <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="437,595,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="113" Height="31" Click="btnMenu_Click"/>
-            <Button x:Name="btnFoodGroupFilter" Content="Food group" HorizontalAlignment="Left" Margin="244,107,0,0" VerticalAlignment="Top" FontSize="16" Width="99" FontWeight="Bold" Height="31" Click="btnFoodGroupFilter_Click"/>
-            <Button x:Name="btnCalorieFilter" Content="Calorie count" HorizontalAlignment="Left" Margin="437,107,0,0" VerticalAlignment="Top" FontSize="16" Width="113" FontWeight="Bold" Height="31" Click="btnCalorieFilter_Click"/>
-            <Button x:Name="btnIngreFilter" Content="Ingredient" HorizontalAlignment="Left" Margin="29,106,0,0" VerticalAlignment="Top" FontSize="16" Width="99" FontWeight="Bold" Height="32" Click="btnIngreFilter_Click"/>
-            <Button x:Name="btnBackToChooseRecipe" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="9" FontWeight="Bold"/>
-            <Label x:Name="lbSearchByFilter" Content="Search by filter" HorizontalAlignment="Left" Margin="29,11,0,0" VerticalAlignment="Top" FontSize="26" Width="363" Height="47"/>
-            <Label x:Name="lbFilter" Content="Filter by:" HorizontalAlignment="Left" Margin="25,58,0,0" VerticalAlignment="Top" FontSize="20" Width="318" Height="41"/>
-            <Label x:Name="lbFilterOoptionLabel" Content="Filter option label displayed here" HorizontalAlignment="Left" Margin="32,177,0,0" VerticalAlignment="Top" FontSize="16" Width="262" Height="36"/>
-            <TextBox x:Name="tbFilterByTextIngre" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
-            <TextBox x:Name="tbFilterByTextCalories" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
-            <ComboBox x:Name="cbFoodGroup" SelectionChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="309,215,0,0" VerticalAlignment="Top" Width="241" FontSize="16">
-                <ComboBoxItem Content="Carbs/Grains"/>
-                <ComboBoxItem Content="Protein"/>
-                <ComboBoxItem Content="Fats/Sugars"/>
-                <ComboBoxItem Content="Dairy"/>
-                <ComboBoxItem Content="Fruit/Veg"/>
-                <ComboBoxItem Content="Root"/>
-                <ComboBoxItem Content="Water"/>
-            </ComboBox>
-
-            <ListBox x:Name="lbDisplayFilteredRecipes6" HorizontalAlignment="Left" Height="240" Margin="32,327,0,0" VerticalAlignment="Top" Width="518"/>
-
-            <!--   <ItemsControl x:Name="FilteredItemsControl">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding IngredientName}"/>
-                            <TextBlock Text="{Binding FoodGroup}"/>
-                            <TextBlock Text="{Binding Calories}"/>
-                            <TextBlock Text="{Binding Ingredients}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl> -->
-        </Grid>
+        <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="437,579,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="113" Height="31" Click="btnMenu_Click"/>
+        <Button x:Name="btnBackToChooseRecipe" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="9" FontWeight="Bold"/>
+        <Label x:Name="lbSearchByFilter" Content="Search by filter" HorizontalAlignment="Left" Margin="29,11,0,0" VerticalAlignment="Top" FontSize="26" Width="363" Height="47"/>
+        <Label x:Name="lbFilter" Content="Filter by:" HorizontalAlignment="Left" Margin="229,58,0,0" VerticalAlignment="Top" FontSize="20" Width="318" Height="41"/>
+        <TextBox x:Name="tbFilterByTextIngre" HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="16" Height="30"/>
+        <TextBox x:Name="tbFilterByTextCalories"  HorizontalAlignment="Left" Margin="437,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" FontSize="16" Height="30"/>
+        <ComboBox x:Name="cbFoodGroup"  HorizontalAlignment="Left" Margin="210,171,0,0" VerticalAlignment="Top" Width="166" FontSize="16">
+            <ComboBoxItem Content="Carbs/Grains"/>
+            <ComboBoxItem Content="Protein"/>
+            <ComboBoxItem Content="Fats/Sugars"/>
+            <ComboBoxItem Content="Dairy"/>
+            <ComboBoxItem Content="Fruit/Veg"/>
+            <ComboBoxItem Content="Root"/>
+            <ComboBoxItem Content="Water"/>
+        </ComboBox>
         <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Center" Margin="0,269,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="117" Height="37" Click="btnFilter_Click"/>
+        <ListBox x:Name="lbDisplayFilteredRecipes6" DisplayMemberPath="RecipeName" HorizontalAlignment="Left" Height="240" Margin="32,327,0,0" VerticalAlignment="Top" Width="518" BorderBrush="#FFA9B2CC" Background="#FFC59A9A" FontSize="20"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="46,574,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="117" Height="36" Click="btnClear_Click"/>
+        <Label x:Name="lbFilter_Copy" Content="Ingredient" HorizontalAlignment="Left" Margin="22,111,0,0" VerticalAlignment="Top" FontSize="16" Width="118" Height="41"/>
+        <Label x:Name="lbFilter_Copy1" Content="Food group" HorizontalAlignment="Left" Margin="230,111,0,0" VerticalAlignment="Top" FontSize="16" Width="126" Height="41"/>
+        <Label x:Name="lbFilter_Copy2" Content="Maximum calories" HorizontalAlignment="Left" Margin="437,111,0,0" VerticalAlignment="Top" FontSize="16" Width="162" Height="48"/>
+
     </Grid>
 </Window>

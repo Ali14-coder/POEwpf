@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +31,7 @@ namespace POEwpf
         public List<Steps> StepsList;
 
         ObservableCollection<Recipes> FilteredRecipesList; //(jwmsft, 2024)
-        private ObservableCollection<Recipes> FilteredRecipesObservableCollection = new ObservableCollection<Recipes>();
+
         private window2 panel2;
         public window6(window2 panel2)
         {
@@ -45,18 +44,15 @@ namespace POEwpf
             FilteredRecipesList = new ObservableCollection<Recipes>(SortedRecipesList.Values);
 
             window5 panel5 = new window5(panel2);
-           
+           // panel5.HardCodedRecipes();
             foreach (var recipe in SortedRecipesList.Values) // as soon as filtering window opens, the filteredList is populated with all the Recipes from the sortedList
             {
                 FilteredRecipesList.Add(recipe);
             }
 
+            lbDisplayFilteredRecipes6.ItemsSource = FilteredRecipesList;
 
-            lbDisplayFilteredRecipes6.ItemsSource = FilteredRecipesObservableCollection;
 
-            //tbFilterByTextIngre.TextChanged += OnFilterChanged;
-            //cbFoodGroup.SelectionChanged += OnSelectionChanged;
-            //tbFilterByTextCalories.TextChanged += OnFilterChanged;
         }
        
         private void btnMenu_Click(object sender, RoutedEventArgs e)
@@ -66,29 +62,65 @@ namespace POEwpf
             panel7.Show();
         }
 
+        private void btnIngreFilter_Click(object sender, RoutedEventArgs e)
+        {
+            lbFilterOoptionLabel.Content = "Enter key ingredient:"; 
+        }
+
+        private void btnFoodGroupFilter_Click(object sender, RoutedEventArgs e)
+        {
+            lbFilterOoptionLabel.Content = "Select food group:";
+        }
+
+        private void btnCalorieFilter_Click(object sender, RoutedEventArgs e)
+        {
+            lbFilterOoptionLabel.Content = "Enter maximum calories:";
+        }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
             FilterApplication();
+            //string ingredientFilter = tbFilterByTextIngre.Text;
+            //string calorieFilter = tbFilterByTextCalories.Text;
+            //string selectedFoodGroup = cbFoodGroup.SelectedItem != null ? (cbFoodGroup.SelectedItem as ComboBoxItem).Content.ToString() : string.Empty;
 
+            //var filtered = SortedRecipesList.Values.Where(recipe =>
+            //    (string.IsNullOrEmpty(ingredientFilter) || recipe.IngredientsList.Any(ingredient => ingredient.IngredientName.Contains(ingredientFilter, StringComparison.InvariantCultureIgnoreCase))) &&
+            //    (string.IsNullOrEmpty(calorieFilter) || recipe.IngredientsList.Any(ingredient => ingredient.Calories <= double.Parse(calorieFilter))) &&
+            //    (string.IsNullOrEmpty(selectedFoodGroup) || recipe.IngredientsList.Any(ingredient => ingredient.FoodGroup.Equals(selectedFoodGroup, StringComparison.InvariantCultureIgnoreCase)))
+            //);
+
+            //FilteredRecipesList.Clear();
+            //foreach (var recipe in filtered)
+            //{
+            //    FilteredRecipesList.Add(recipe);
+            //}
         }
-      
+        private void OnFilterChanged(object sender, TextChangedEventArgs args)
+        {
+            FilterApplication(); //(jwmsft, 2024)
+        }
+
+        private void OnFilterChanged(object sender, SelectionChangedEventArgs args)
+        {
+            FilterApplication(); //(jwmsft, 2024)
+        }
         private void FilterApplication()
         {
             var filterer = SortedRecipesList.Values.Where(recipe => Filtering(recipe));
             FilterOutNonMatches(filterer);
             RepopulateFilteredRecipes(filterer); //(jwmsft, 2024)
-            DisplayFilteredRecipes(filterer);
         }
         private bool Filtering(Recipes recipe)
         {
+           // IngredientsList = panel2.GetIngredientsList();
             bool ingredientMatch = string.IsNullOrEmpty(tbFilterByTextIngre.Text) || recipe.IngredientsList.Any(ingredient => ingredient.IngredientName.Contains(tbFilterByTextIngre.Text, StringComparison.InvariantCultureIgnoreCase));
 
-            bool foodGroupMatch = string.IsNullOrEmpty(cbFoodGroup.Text) || recipe.IngredientsList.Any(ingredient =>ingredient.FoodGroup.Contains(cbFoodGroup.Text, StringComparison.InvariantCultureIgnoreCase));
+            bool foodGroupMatch = string.IsNullOrEmpty(cbFoodGroup.Text) || ingredients.FoodGroup.Contains(cbFoodGroup.Text, StringComparison.InvariantCultureIgnoreCase);
 
-            bool maxCalorieMatch = string.IsNullOrEmpty(tbFilterByTextCalories.Text) || recipe.IngredientsList.Any(ingredient => ingredient.Calories <= int.Parse(tbFilterByTextCalories.Text));
+            bool maxCalorieMatch = string.IsNullOrEmpty(tbFilterByTextCalories.Text) || ingredients.Calories <= int.Parse(tbFilterByTextCalories.Text);
 
-            return ingredientMatch && foodGroupMatch && maxCalorieMatch; //(jwmsft, 2024)
+            return ingredientMatch || foodGroupMatch || maxCalorieMatch; //(jwmsft, 2024)
         }
 
         private void FilterOutNonMatches(IEnumerable<Recipes> recipeFilter) //method to remove any recipes that do not match the user's input
@@ -113,23 +145,8 @@ namespace POEwpf
                 }
             }
         } //(jwmsft, 2024)
-        private void DisplayFilteredRecipes(IEnumerable<Recipes> filteredRecipes)// this method add the filteredList into the listbox to be displayed, and clears it after a new filter is applied
-        {
-            FilteredRecipesObservableCollection.Clear(); //clears previously stored recipes within the list box
-            foreach (var recipe in filteredRecipes)
-            {
-                Console.WriteLine($"Adding recipe: {recipe.RecipeName}");
-                FilteredRecipesObservableCollection.Add(recipe); 
-            }
-        }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            FilteredRecipesObservableCollection.Clear();
-            tbFilterByTextCalories.Text = "";
-            tbFilterByTextIngre.Text = "";
-            cbFoodGroup.Text = string.Empty;
-        }
+ 
     }
 }
 //References:
