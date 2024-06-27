@@ -6,11 +6,16 @@
         xmlns:local="clr-namespace:POEwpf"
         mc:Ignorable="d"
         Title="window7" Height="670" Width="575">
-    <Grid>
-        <Ellipse HorizontalAlignment="Center" Height="233" Margin="0,250,0,0" Stroke="Black" VerticalAlignment="Top" Width="268"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="42,220,0,0" VerticalAlignment="Top" Height="30" Width="53" FontSize="16"/>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,196,0,0" VerticalAlignment="Top" Height="30" Width="52" FontSize="16"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="470,220,0,0" VerticalAlignment="Top" Height="30" Width="53" FontSize="16"/>
-
+    <Grid x:Name="panel7">
+        <Grid.Background>
+            <ImageBrush ImageSource="/RecpDetails.jpg"/>
+        </Grid.Background>
+        <Label x:Name="lbMenuOptions" Content="Menu options" HorizontalAlignment="Right" Margin="0,10,225,0" VerticalAlignment="Top" FontSize="40" Width="278" Background="#FFF9F9F9" Height="66"/>
+        <Button x:Name="btnChooseRecipe" Content="Choose a recipe" HorizontalAlignment="Left" Margin="104,327,0,0" VerticalAlignment="Top" FontSize="22" Width="350" Click="btnChooseRecipe_Click" Height="51" FontWeight="Bold"/>
+        <Button x:Name="btnDisplayRecipe" Content="Display recipe" HorizontalAlignment="Left" Margin="104,224,0,0" VerticalAlignment="Top" FontSize="22" Width="350" Click="btnDisplayRecipe_Click" Height="50" FontWeight="Bold"/>
+        <Button x:Name="btnScale" Content="Scale recipe" HorizontalAlignment="Left" Margin="104,118,0,0" VerticalAlignment="Top" FontSize="22" Width="350" Click="btnScale_Click" Height="50" FontWeight="Bold"/>
+        <Button x:Name="btnFilterRecipe" Content="Filter through recipes" HorizontalAlignment="Left" Margin="104,439,0,0" VerticalAlignment="Top" FontSize="22" Width="350" Click="btnFilterRecipe_Click" Height="52" FontWeight="Bold"/>
+        <Button x:Name="btnExit7" Content="Exit" HorizontalAlignment="Left" Margin="403,600,0,0" VerticalAlignment="Top" FontSize="22" Width="133" Click="btnExit7_Click" Height="44" FontWeight="Bold"/>
+        <Button x:Name="btnBackToAddRecipe2" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Width="48" Click="btnExit7_Click" Height="49" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="window5" Height="670" Width="575">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Height="924" Width="565">
+        <Grid Height="654" Width="610">
             <Grid.Background>
                 <ImageBrush ImageSource="/Images/RecpDetails3.jpg"/>
             </Grid.Background>
@@ -16,7 +16,7 @@
             <Button x:Name="btnBackToViewRecipe" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Click="btnBackToViewRecipe_Click" Height="54" Width="30"/>
             <Label x:Name="lbDisplaySelectedRecipe" Content="..." HorizontalAlignment="Left" Margin="45,261,0,0" VerticalAlignment="Top" FontSize="16" Height="287" Width="448" Background="#FFA7A8AA"/>
             <Label x:Name="lblListOfAllRecipes" Content="List of all recipes" HorizontalAlignment="Right" Margin="0,10,109,0" VerticalAlignment="Top" FontSize="24" Width="411" Background="#FFF9F9F9" Height="48"/>
-            <ListBox x:Name="lbRecipeOptions" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,79,72,756" FontSize="16"/>
+            <ListBox x:Name="lbRecipeOptions" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,79,72,482" FontSize="16"/>
 
         </Grid>
     </ScrollViewer>

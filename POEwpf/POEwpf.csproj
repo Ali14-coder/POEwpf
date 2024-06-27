@@ -13,6 +13,7 @@
     <None Remove="Images\recpDetails2.jpg" />
     <None Remove="Images\RecpDetails3.jpg" />
     <None Remove="infoPage3.jpg" />
+    <None Remove="RecpDetails.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
     <Resource Include="Images\recpDetails2.jpg" />
     <Resource Include="Images\RecpDetails3.jpg" />
     <Resource Include="infoPage3.jpg" />
+    <Resource Include="RecpDetails.jpg" />
   </ItemGroup>
 
 </Project>

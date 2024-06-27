@@ -28,13 +28,13 @@ namespace POEwpf
         public List<Ingredients> IngredientsList;
         public List<Steps> StepsList;
 
-       
         public window2()
         {
             SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
        //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
- 
+
+            
         }
 
         private void btnSetRecipe_Click(object sender, RoutedEventArgs e)
@@ -114,25 +114,26 @@ namespace POEwpf
             MessageBox.Show("Recipe successfully added");
         }
 
-        private void btnDisplayRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            window3 panel3 = new window3(panel2);
-            this.Hide();
-            panel3.Show();
+        //private void btnDisplayRecipe_Click(object sender, RoutedEventArgs e)
+        //{
+        //    window3 panel3 = new window3(panel2);
+        //    this.Hide();
+        //    panel3.Show();
 
-            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
-            panel3.txtRecipeName2.Text = recentRecipe.RecipeName;  
-        }
+        //    panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+        //    panel3.txtRecipeName2.Text = recentRecipe.RecipeName;  
+        //}
 
-        private void btnExit2_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow panel1 = new MainWindow();
-            this.Hide();
-            panel1.Show();
-        }
         public SortedList<string, Recipes> GetSortedRecipesList()
         {
             return SortedRecipesList;
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            window7 panel7 = new window7(panel2);
+            this.Hide();
+            panel7.Show();
         }
     }
 }

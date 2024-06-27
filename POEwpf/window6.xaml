@@ -18,7 +18,7 @@
         <Label x:Name="lbSearchByFilter" Content="Search by filter" HorizontalAlignment="Left" Margin="29,11,0,0" VerticalAlignment="Top" FontSize="26" Width="363" Height="47"/>
         <Label x:Name="lbFilter" Content="Filter by:" HorizontalAlignment="Left" Margin="25,58,0,0" VerticalAlignment="Top" FontSize="20" Width="318" Height="41"/>
         <Label x:Name="lbFilterOoptionLabel" Content="Filter option label displayed here" HorizontalAlignment="Left" Margin="32,177,0,0" VerticalAlignment="Top" FontSize="16" Width="262" Height="36"/>
-        <TextBox x:Name="txtFilterOptionText" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
+        <TextBox x:Name="txtFilterOptionText" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
         <Label x:Name="lbDisplayFilterRecipes" HorizontalAlignment="Left" Margin="56,262,0,0" VerticalAlignment="Top" FontSize="16" Width="467" Height="240" Background="#FFD9DDE0"/>
 
     </Grid>

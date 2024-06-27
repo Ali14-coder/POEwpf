@@ -52,21 +52,18 @@ namespace POEwpf
             lbDisplayIngreAndSteps.Content = ""; //MAKE INTO A LISTBOX
         }
 
-        private void btnChooseRecipe_Click(object sender, RoutedEventArgs e)
+        //private void btnScale_Click(object sender, RoutedEventArgs e)
+        //{
+        //    window4 panel4 = new window4(panel2);
+        //    this.Hide();
+        //    panel4.Show();
+        //}
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            window5 panel5 = new window5(panel2);
+            window7 panel7 = new window7(panel2);
             this.Hide();
-            
-
-            panel5.Show();
+            panel7.Show();
         }
-
-        private void btnScale_Click(object sender, RoutedEventArgs e)
-        {
-            window4 panel4 = new window4(panel2);
-            this.Hide();
-            panel4.Show();
-        }
-
     }
 }

@@ -19,9 +19,49 @@ namespace POEwpf
     /// </summary>
     public partial class window7 : Window
     {
-        public window7()
+        private window2 panel2;
+        public window7(window2 panel2)
         {
             InitializeComponent();
+            this.panel2 = panel2;
+        }
+
+        private void btnExit7_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow panel1 = new MainWindow();
+            this.Hide();
+            panel1.Show();
+        }
+
+        private void btnScale_Click(object sender, RoutedEventArgs e)
+        {
+            window4 panel4 = new window4(panel2);
+            this.Hide();
+            panel4.Show();
+        }
+
+        private void btnDisplayRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            window3 panel3 = new window3(panel2);
+            this.Hide();
+            panel3.Show();
+
+            panel3.lbDisplayIngreAndSteps.Content = recentRecipe.PrintRecipe();
+            panel3.txtRecipeName2.Text = recentRecipe.RecipeName;
+        }
+
+        private void btnChooseRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            window5 panel5 = new window5(panel2);
+            this.Hide();
+            panel5.Show();
+        }
+
+        private void btnFilterRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            window6 panel6 = new window6();
+            this.Hide();
+            panel6.Show();
         }
     }
 }

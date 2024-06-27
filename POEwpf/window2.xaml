@@ -12,9 +12,9 @@
                 <ImageBrush ImageSource="/Images/infoPage3.jpg"/>
             </Grid.Background>
             <Label x:Name="lblRecipeName" Content="Enter recipe name:" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Height="48" Width="206" FontSize="18"/>
-            <Label x:Name="lblIngeNo" Content="Enter number of ingredients:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="44" Width="221" FontSize="18"/>
+            <Label x:Name="lblIngeNo" Content="Enter number of ingredients:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="44" Width="243" FontSize="18"/>
             <Label x:Name="lblQuantity" Content="Enter quantity of ingredients:" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Height="44" Width="299" FontSize="18"/>
-            <Label x:Name="lblingrFoodGroup" Content="Enter food group:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Height="29" Width="180" FontSize="18" RenderTransformOrigin="0.528,0.744"/>
+            <Label x:Name="lblingrFoodGroup" Content="Enter food group:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Height="45" Width="180" FontSize="18" RenderTransformOrigin="0.528,0.744"/>
             <Label x:Name="lblIngreName" Content="Enter ingredient name:" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Height="46" Width="243" FontSize="18"/>
             <Label x:Name="lblIngreUnitofMeasure" Content="Enter unit of measurement:" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" Height="30" Width="266" FontSize="18"/>
             <Label x:Name="lblingreCalories" Content="Enter calorie amount:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="33" Width="206" FontSize="18"/>
@@ -30,13 +30,12 @@
             <Button x:Name="btnSetRecipe" Content="Set" Margin="443,17,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="104" RenderTransformOrigin="0.5,0.5" Click="btnSetRecipe_Click" FontWeight="Bold" HorizontalAlignment="Left"/>
             <Label x:Name="lblStepDescription" Content="Enter step description:" HorizontalAlignment="Left" Margin="23,365,0,0" VerticalAlignment="Top" Height="33" Width="248" FontSize="18"/>
             <Label x:Name="lblStepNo" Content="Enter number of steps:" HorizontalAlignment="Left" Margin="23,325,0,0" VerticalAlignment="Top" Height="37" Width="230" FontSize="18"/>
-            <TextBox x:Name="txtStepDescription" HorizontalAlignment="Left" Margin="15,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="532" FontSize="9" Height="122"/>
+            <TextBox x:Name="txtStepDescription" HorizontalAlignment="Left" Margin="15,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="532" FontSize="20" Height="122"/>
             <TextBox x:Name="UpDownSteps" HorizontalAlignment="Left" Margin="346,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" Height="25"/>
             <Button x:Name="btnAddRecipe" Content="Add recipe" HorizontalAlignment="Left" Margin="15,587,0,0" VerticalAlignment="Top" Height="35" FontSize="20" Width="138" RenderTransformOrigin="0.778,1.058" Click="btnAddRecipe_Click" FontWeight="Bold"/>
-            <Button x:Name="btnDisplayRecipe" Content="Display recipe" HorizontalAlignment="Center" Margin="0,589,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="139" RenderTransformOrigin="0.786,0.535" Click="btnDisplayRecipe_Click" FontWeight="Bold"/>
-            <Button x:Name="btnClearStep" Content="Clear" HorizontalAlignment="Left" Margin="15,541,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnClearStep_Click" FontWeight="Bold"/>
-            <Button x:Name="btnAddStep" Content="Add step" HorizontalAlignment="Center" Margin="0,541,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="139" RenderTransformOrigin="0.786,0.535" Click="btnAddStep_Click" FontWeight="Bold"/>
-            <Button x:Name="btnExit2" Content="Exit" HorizontalAlignment="Left" Margin="409,589,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnExit2_Click" FontWeight="Bold"/>
+            <Button x:Name="btnClearStep" Content="Clear" HorizontalAlignment="Left" Margin="15,533,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnClearStep_Click" FontWeight="Bold"/>
+            <Button x:Name="btnAddStep" Content="Add step" HorizontalAlignment="Center" Margin="0,533,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="139" RenderTransformOrigin="0.786,0.535" Click="btnAddStep_Click" FontWeight="Bold"/>
+            <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="409,589,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnMenu_Click" FontWeight="Bold"/>
 
         </Grid>
     </ScrollViewer>
