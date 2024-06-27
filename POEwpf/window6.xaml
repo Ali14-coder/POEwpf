@@ -13,9 +13,9 @@
         <Button x:Name="btnBackToChooseRecipe" Content="&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="9" FontWeight="Bold"/>
         <Label x:Name="lbSearchByFilter" Content="Search by filter" HorizontalAlignment="Left" Margin="29,11,0,0" VerticalAlignment="Top" FontSize="26" Width="363" Height="47"/>
         <Label x:Name="lbFilter" Content="Filter by:" HorizontalAlignment="Left" Margin="229,58,0,0" VerticalAlignment="Top" FontSize="20" Width="318" Height="41"/>
-        <TextBox x:Name="tbFilterByTextIngre" HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="16" Height="30"/>
+        <TextBox x:Name="tbFilterByTextIngre"  HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="16" Height="30"/>
         <TextBox x:Name="tbFilterByTextCalories"  HorizontalAlignment="Left" Margin="437,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" FontSize="16" Height="30"/>
-        <ComboBox x:Name="cbFoodGroup"  HorizontalAlignment="Left" Margin="210,171,0,0" VerticalAlignment="Top" Width="166" FontSize="16">
+        <ComboBox x:Name="cbFoodGroup" SelectionChanged="OnSelectedChanged" HorizontalAlignment="Left" Margin="210,171,0,0" VerticalAlignment="Top" Width="166" FontSize="16">
             <ComboBoxItem Content="Carbs/Grains"/>
             <ComboBoxItem Content="Protein"/>
             <ComboBoxItem Content="Fats/Sugars"/>

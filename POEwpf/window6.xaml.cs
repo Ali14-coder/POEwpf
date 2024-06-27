@@ -54,9 +54,9 @@ namespace POEwpf
 
             lbDisplayFilteredRecipes6.ItemsSource = FilteredRecipesObservableCollection;
 
-            //tbFilterByTextIngre.TextChanged += OnFilterChanged;
-            //cbFoodGroup.SelectionChanged += OnSelectionChanged;
-            //tbFilterByTextCalories.TextChanged += OnFilterChanged;
+          //  tbFilterByTextIngre.TextChanged += OnFilterChanged;
+            cbFoodGroup.SelectionChanged += OnSelectedChanged;
+          //  tbFilterByTextCalories.TextChanged += OnFilterChanged;
         }
        
         private void btnMenu_Click(object sender, RoutedEventArgs e)
@@ -66,9 +66,17 @@ namespace POEwpf
             panel7.Show();
         }
 
-
+        //private void OnFilterChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    FilterApplication();
+        //}
+        private void OnSelectedChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FilterApplication();
+        }
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
+            
             FilterApplication();
 
         }
@@ -118,11 +126,14 @@ namespace POEwpf
             FilteredRecipesObservableCollection.Clear(); //clears previously stored recipes within the list box
             foreach (var recipe in filteredRecipes)
             {
-                Console.WriteLine($"Adding recipe: {recipe.RecipeName}");
                 FilteredRecipesObservableCollection.Add(recipe); 
             }
         }
-
+        private void cbFoodGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // When the selection in cbFoodGroup changes, reapply the filter
+            FilterApplication();
+        }
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             FilteredRecipesObservableCollection.Clear();
