@@ -12,13 +12,13 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Images/RecpDetails3.jpg"/>
             </Grid.Background>
-            <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="417,598,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="115" Click="btnMenu_Click" Height="30"/>
-            <Button x:Name="btnViewRecipe" Content="View recipe" HorizontalAlignment="Left" Margin="198,192,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="42" Width="119" Click="btnViewRecipe_Click"/>
+            <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="417,598,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="115" Click="btnMenu_Click" Height="30" FontFamily="Segoe Print"/>
+            <Button x:Name="btnViewRecipe" Content="View recipe" HorizontalAlignment="Left" Margin="248,195,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="42" Width="120" Click="btnViewRecipe_Click" FontFamily="Segoe Print"/>
 
-            <Label x:Name="lbDisplaySelectedRecipe" Content="" HorizontalAlignment="Left" Margin="45,261,0,0" VerticalAlignment="Top" FontSize="16" Height="287" Width="448" Background="#FFA7A8AA"/>
-            
-            <Label x:Name="lblListOfAllRecipes" Content="List of all recipes" HorizontalAlignment="Right" Margin="0,10,109,0" VerticalAlignment="Top" FontSize="24" Width="411" Background="#FFF9F9F9" Height="48"/>
-            <ListBox x:Name="lbRecipeOptions" Margin="45,79,109,482" FontSize="16"/>
+            <Label x:Name="lbDisplaySelectedRecipe" Content="" HorizontalAlignment="Left" Margin="84,266,0,0" VerticalAlignment="Top" FontSize="16" Height="286" Width="448" Background="#FFA7A8AA"/>
+
+            <Label x:Name="lblListOfAllRecipes" Content="List of all recipes" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="24" Width="226" Background="#FF9EA09D" Height="48" FontFamily="Segoe Print"/>
+            <ListBox x:Name="lbRecipeOptions" Margin="76,80,78,480" FontSize="16" FontFamily="Segoe Print"/>
 
         </Grid>
     </ScrollViewer>
