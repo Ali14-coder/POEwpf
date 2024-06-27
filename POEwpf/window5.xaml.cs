@@ -31,23 +31,38 @@ namespace POEwpf
         private window2 panel2;
         public window5(window2 Panel2)
         {
-            SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
+          //  SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
                                                                    //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
             panel2 = Panel2;
 
+            // PopulateRecipeListBox();
             SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
 
-            lbRecipeOptions.Items.Add(""); //makes listbox empty
-
-            int index = 1;
-            foreach (var recipeName in SortedRecipesList.Keys) //this is meant to show a number next to each recipeName called from the SortedList
+            if (SortedRecipesList == null)
             {
-                lbRecipeOptions.Items.Add(index + ". " + recipeName);
-                index++;
+                MessageBox.Show("SortedRecipesList is empty.");
+                return;
+            }
+            foreach (var recipeName in SortedRecipesList.Keys)
+            {
+                lbRecipeOptions.Items.Add(recipeName);
             }
         }
+       
+        //private void PopulateRecipeListBox()
+        //{
+        //    SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
 
+        //    lbRecipeOptions.Items.Add(""); //makes listbox empty
+
+        //    int index = 1;
+        //    foreach (var recipeName in SortedRecipesList.Keys) //this is meant to show a number next to each recipeName called from the SortedList
+        //    {
+        //        lbRecipeOptions.Items.Add(index + ". " + recipeName);
+        //        index++;
+        //    }
+        //}
         private void btnBackToViewRecipe_Click(object sender, RoutedEventArgs e)
         {
             window4 panel4 = new window4(panel2);
@@ -57,26 +72,20 @@ namespace POEwpf
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-            int selectedIndex = lbRecipeOptions.SelectedIndex; //takes in the int of the up down scroll selection
-            
+            int selectedIndex = lbRecipeOptions.SelectedIndex;
 
-            if (selectedIndex == -1) //error handeling to check whether index selection is within bounds
+            if (selectedIndex == -1)
             {
                 MessageBox.Show("Recipe number out of range. Please re-select");
                 return;
             }
-            if (lbRecipeOptions.SelectedItem ==null)
-            {
-                MessageBox.Show("No recipe chosen. Please select a recipe first");
-            }
 
-            string selectedItem = lbRecipeOptions.SelectedItem.ToString();
-            string recipeName = selectedItem.Substring(selectedItem.IndexOf(". ") + 2);
+            string recipeName = lbRecipeOptions.SelectedItem.ToString();
 
-            if(SortedRecipesList.ContainsKey(recipeName))
+            if (SortedRecipesList.ContainsKey(recipeName))
             {
-                Recipes selectedRecipe = SortedRecipesList[recipeName]; //this variable stores the recipe name by extracting the everything after the ". " and executes this when the recipe name is selected
-                lbDisplaySelectedRecipe.Content = "Recipe:" + selectedRecipe.RecipeName + "\n";
+                Recipes selectedRecipe = SortedRecipesList[recipeName];
+                lbDisplaySelectedRecipe.Content = "Recipe: " + selectedRecipe.RecipeName + "\n";
                 lbDisplaySelectedRecipe.Content += selectedRecipe.PrintRecipe();
             }
         }

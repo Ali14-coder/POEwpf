@@ -38,30 +38,22 @@ namespace POEwpf
             InitializeComponent();
             this.panel2 = panel2;
 
-            ////One recipe populated
-            //IngredientsList.Add(new Ingredients("Flour", 500, "grams", "Carbs & Grains", 50, "Bread"));
-            //IngredientsList.Add(new Ingredients("Sugar", 200, "grams", "Sugar", 90, "Bread"));
-            //IngredientsList.Add(new Ingredients("Yeast", 0.25, "tbs", "Carbs & Grains", 10, "Bread"));
 
-            //StepsList.Add(new Steps("Sift flour into bowl."));
-            //StepsList.Add(new Steps("Slowly add sugar."));
-            //StepsList.Add(new Steps("Mix the yeast into the mixture."));
+            SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
+            FilteredRecipesList = new ObservableCollection<Recipes>(SortedRecipesList.Values);
 
-            ////Second recipe populated
-            //IngredientsList.Add(new Ingredients("All purpose flour", 555, "grams", "Carbs & Grains", 65, "Cookies"));
-            //IngredientsList.Add(new Ingredients("Chocolate chips", 1, "cup", "Sugar", 230, "Cookies"));
+            window5 panel5 = new window5(panel2);
+           // panel5.HardCodedRecipes();
+            foreach (var recipe in SortedRecipesList.Values)
+            {
+                FilteredRecipesList.Add(recipe);
+            }
 
-            //StepsList.Add(new Steps("Sift flour carefully into bowl."));
-            //StepsList.Add(new Steps("Pour the chocolate chips into the mixture."));
-            //StepsList.Add(new Steps("Mix together."));
+            lbDisplayFilteredRecipes6.ItemsSource = FilteredRecipesList;
 
-            //SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
-            //FilteredRecipesList = new ObservableCollection<Recipes>(SortedRecipesList.Values);
-            //FilteredItemsControl.ItemsSource = SortedRecipesList;
 
-            
         }
-
+       
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
             window7 panel7 = new window7(panel2);
@@ -82,6 +74,25 @@ namespace POEwpf
         private void btnCalorieFilter_Click(object sender, RoutedEventArgs e)
         {
             lbFilterOoptionLabel.Content = "Enter maximum calories:";
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            string ingredientFilter = tbFilterByTextIngre.Text;
+            string calorieFilter = tbFilterByTextCalories.Text;
+            string selectedFoodGroup = cbFoodGroup.SelectedItem != null ? (cbFoodGroup.SelectedItem as ComboBoxItem).Content.ToString() : string.Empty;
+
+            var filtered = SortedRecipesList.Values.Where(recipe =>
+                (string.IsNullOrEmpty(ingredientFilter) || recipe.IngredientsList.Any(ingredient => ingredient.IngredientName.Contains(ingredientFilter, StringComparison.InvariantCultureIgnoreCase))) &&
+                (string.IsNullOrEmpty(calorieFilter) || recipe.IngredientsList.Any(ingredient => ingredient.Calories <= double.Parse(calorieFilter))) &&
+                (string.IsNullOrEmpty(selectedFoodGroup) || recipe.IngredientsList.Any(ingredient => ingredient.FoodGroup.Equals(selectedFoodGroup, StringComparison.InvariantCultureIgnoreCase)))
+            );
+
+            FilteredRecipesList.Clear();
+            foreach (var recipe in filtered)
+            {
+                FilteredRecipesList.Add(recipe);
+            }
         }
         private void OnFilterChanged(object sender, TextChangedEventArgs args)
         {
@@ -131,6 +142,8 @@ namespace POEwpf
                 }
             }
         } //(jwmsft, 2024)
+
+ 
     }
 }
 //References:

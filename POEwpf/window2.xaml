@@ -25,10 +25,10 @@
             <TextBox x:Name="txtUnitOfMesaure" HorizontalAlignment="Left" Margin="351,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="30"/>
             <TextBox x:Name="UpDownCalories" HorizontalAlignment="Left" Margin="351,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="30"/>
             <TextBox x:Name="UpDownQuantity" HorizontalAlignment="Left" Margin="351,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="30"/>
-            <ComboBox x:Name="cbFoodGroup"  HorizontalAlignment="Left" Margin="351,131,0,0" VerticalAlignment="Top" Width="196" FontSize="16" Height="30">
+            <ComboBox x:Name="cbFoodGroup"  HorizontalAlignment="Left" Margin="351,131,0,0" VerticalAlignment="Top" Width="196" FontSize="20" Height="30">
                 <ComboBoxItem Content="Carbs/Grains"/>
                 <ComboBoxItem Content="Protein"/>
-                <ComboBoxItem Content="Fats"/>
+                <ComboBoxItem Content="Fats/Sugars"/>
                 <ComboBoxItem Content="Dairy"/>
                 <ComboBoxItem Content="Fruit/Veg"/>
                 <ComboBoxItem Content="Root"/>
@@ -44,7 +44,7 @@
             <Button x:Name="btnAddRecipe" Content="Add recipe" HorizontalAlignment="Left" Margin="15,587,0,0" VerticalAlignment="Top" Height="35" FontSize="20" Width="138" RenderTransformOrigin="0.778,1.058" Click="btnAddRecipe_Click" FontWeight="Bold"/>
             <Button x:Name="btnClearStep" Content="Clear" HorizontalAlignment="Left" Margin="15,533,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnClearStep_Click" FontWeight="Bold"/>
             <Button x:Name="btnAddStep" Content="Add step" HorizontalAlignment="Center" Margin="0,533,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="139" RenderTransformOrigin="0.786,0.535" Click="btnAddStep_Click" FontWeight="Bold"/>
-            <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="409,589,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnMenu_Click" FontWeight="Bold"/>
+            <Button x:Name="btnMenu" Content="Back to Menu" HorizontalAlignment="Left" Margin="409,589,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="138" RenderTransformOrigin="0.786,0.535" Click="btnMenu_Click" FontWeight="Bold"/>
 
         </Grid>
     </ScrollViewer>

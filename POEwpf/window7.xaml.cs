@@ -65,5 +65,19 @@ namespace POEwpf
             this.Hide();
             panel2.Show();
         }
+
+        private void btnExit7_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow panel1 = new MainWindow();
+            this.Hide();
+            panel1.Show();
+        }
+
+        private void btnAddRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            window2 panel2 = new window2();
+            this.Hide();
+            panel2.Show();
+        }
     }
 }
