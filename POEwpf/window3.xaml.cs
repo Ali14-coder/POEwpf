@@ -57,14 +57,6 @@ namespace POEwpf
             window5 panel5 = new window5(panel2);
             this.Hide();
             
-            panel5.lbRecipeOptions.Items.Add(""); //makes listbox empty
-
-            int index = 1;
-            foreach (var recipeName in SortedRecipesList.Keys) //this is meant to show a number next to each recipeName called from the SortedList
-            {
-                panel5.lbRecipeOptions.Items.Add(index + ". " + recipeName);
-                index++;
-            }
 
             panel5.Show();
         }

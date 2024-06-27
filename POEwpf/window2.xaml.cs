@@ -34,9 +34,7 @@ namespace POEwpf
             SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
        //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
-
-
-            
+ 
         }
 
         private void btnSetRecipe_Click(object sender, RoutedEventArgs e)

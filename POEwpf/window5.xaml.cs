@@ -37,6 +37,15 @@ namespace POEwpf
             panel2 = Panel2;
 
             SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
+
+            panel5.lbRecipeOptions.Items.Add(""); //makes listbox empty
+
+            int index = 1;
+            foreach (var recipeName in SortedRecipesList.Keys) //this is meant to show a number next to each recipeName called from the SortedList
+            {
+                panel5.lbRecipeOptions.Items.Add(index + ". " + recipeName);
+                index++;
+            }
         }
 
         private void btnBackToViewRecipe_Click(object sender, RoutedEventArgs e)
