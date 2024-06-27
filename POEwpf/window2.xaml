@@ -24,7 +24,14 @@
             <TextBox x:Name="txtUnitOfMesaure" HorizontalAlignment="Left" Margin="351,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="24"/>
             <TextBox x:Name="UpDownCalories" HorizontalAlignment="Left" Margin="351,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="25"/>
             <TextBox x:Name="UpDownQuantity" HorizontalAlignment="Left" Margin="351,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="25"/>
-            <TextBox x:Name="txtIngreFoodGroup" HorizontalAlignment="Left" Margin="351,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="25"/>
+            <ComboBox x:Name="cbFoodGroup"  HorizontalAlignment="Left" Margin="351,131,0,0" VerticalAlignment="Top" Width="196" FontSize="16">
+                <ComboBoxItem Content="Carbs/Grains"/>
+                <ComboBoxItem Content="Protein"/>
+                <ComboBoxItem Content="Fats"/>
+                <ComboBoxItem Content="Dairy"/>
+                <ComboBoxItem Content="Fruit/Veg"/>
+                <ComboBoxItem Content="Water"/>
+            </ComboBox>
             <TextBox x:Name="txtIngreName" HorizontalAlignment="Left" Margin="351,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" FontSize="20" Height="25"/>
             <TextBox x:Name="UpDownIngre" HorizontalAlignment="Left" Margin="351,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" FontSize="20" Height="25"/>
             <Button x:Name="btnSetRecipe" Content="Set" Margin="443,17,0,0" VerticalAlignment="Top" Height="34" FontSize="20" Width="104" RenderTransformOrigin="0.5,0.5" Click="btnSetRecipe_Click" FontWeight="Bold" HorizontalAlignment="Left"/>

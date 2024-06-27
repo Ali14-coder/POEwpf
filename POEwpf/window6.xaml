@@ -18,8 +18,30 @@
         <Label x:Name="lbSearchByFilter" Content="Search by filter" HorizontalAlignment="Left" Margin="29,11,0,0" VerticalAlignment="Top" FontSize="26" Width="363" Height="47"/>
         <Label x:Name="lbFilter" Content="Filter by:" HorizontalAlignment="Left" Margin="25,58,0,0" VerticalAlignment="Top" FontSize="20" Width="318" Height="41"/>
         <Label x:Name="lbFilterOoptionLabel" Content="Filter option label displayed here" HorizontalAlignment="Left" Margin="32,177,0,0" VerticalAlignment="Top" FontSize="16" Width="262" Height="36"/>
-        <TextBox x:Name="tbFilterByText" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
-        <Label x:Name="lbDisplayFilterRecipes" HorizontalAlignment="Left" Margin="56,262,0,0" VerticalAlignment="Top" FontSize="16" Width="467" Height="240" Background="#FFD9DDE0"/>
+        <TextBox x:Name="tbFilterByTextIngre" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
+        <TextBox x:Name="tbFilterByTextCalories" TextChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="308,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontSize="16" Height="30"/>
 
+        <Label x:Name="lbDisplayFilterRecipes" HorizontalAlignment="Left" Margin="56,262,0,0" VerticalAlignment="Top" FontSize="16" Width="467" Height="240" Background="#FFD9DDE0"/>
+        <ComboBox x:Name="cbFoodGroup" SelectionChanged="OnFilterChanged" HorizontalAlignment="Left" Margin="309,215,0,0" VerticalAlignment="Top" Width="241" FontSize="16">
+            <ComboBoxItem Content="Carbs/Grains"/>
+            <ComboBoxItem Content="Protein"/>
+            <ComboBoxItem Content="Fats"/>
+            <ComboBoxItem Content="Dairy"/>
+            <ComboBoxItem Content="Fruit/Veg"/>
+            <ComboBoxItem Content="Water"/>
+        </ComboBox>
+
+        <ItemsControl x:Name="FilteredItemsControl">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding RecipeName}"/>
+                        <TextBlock Text="{Binding FoodGroup}"/>
+                        <TextBlock Text="{Binding Calories}"/>
+                        <TextBlock Text="{Binding Ingredients}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </Window>

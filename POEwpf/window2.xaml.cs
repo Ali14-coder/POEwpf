@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,26 @@ namespace POEwpf
         public window2()
         {
             SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
-       //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
 
-            
+            //One recipe populated
+            IngredientsList.Add(new Ingredients("Flour",500,"grams","Carbs & Grains",50,"Bread"));
+            IngredientsList.Add(new Ingredients("Sugar", 200, "grams", "Sugar",90, "Bread"));
+            IngredientsList.Add(new Ingredients("Yeast",0.25, "tbs", "Carbs & Grains", 10, "Bread"));
+
+            StepsList.Add(new Steps("Sift flour into bowl."));
+            StepsList.Add(new Steps("Slowly add sugar."));
+            StepsList.Add(new Steps("Mix the yeast into the mixture."));
+
+            //Second recipe populated
+            IngredientsList.Add(new Ingredients("All purpose flour", 555, "grams", "Carbs & Grains", 65, "Cookies"));
+            IngredientsList.Add(new Ingredients("Chocolate chips", 1, "cup", "Sugar", 230, "Cookies"));
+
+            StepsList.Add(new Steps("Sift flour carefully into bowl."));
+            StepsList.Add(new Steps("Pour the chocolate chips into the mixture."));
+            StepsList.Add(new Steps("Mix together."));
+
+   
         }
 
         private void btnSetRecipe_Click(object sender, RoutedEventArgs e)
@@ -50,7 +67,7 @@ namespace POEwpf
         {
             txtIngreName.Text = "";
             txtUnitOfMesaure.Text = "";
-            txtIngreFoodGroup.Text = "";
+            cbFoodGroup.Text = string.Empty;
             UpDownQuantity.Text = "";
             UpDownCalories.Text = "";
         }
@@ -61,7 +78,7 @@ namespace POEwpf
             string ingredientName = txtIngreName.Text;
             double quantity = Convert.ToDouble(UpDownQuantity.Text);
             string unitOfMeasurement = txtUnitOfMesaure.Text;
-            string foodGroup = txtIngreFoodGroup.Text;
+            string foodGroup = cbFoodGroup.Text;
             double calories = Convert.ToDouble(UpDownCalories.Text);
             string recipeName = txtRecipeName.Text;
 
