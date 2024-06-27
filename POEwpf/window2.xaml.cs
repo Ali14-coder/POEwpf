@@ -132,6 +132,9 @@ namespace POEwpf
             this.Hide();
             panel1.Show();
         }
-
+        public SortedList<string, Recipes> GetSortedRecipesList()
+        {
+            return SortedRecipesList;
+        }
     }
 }

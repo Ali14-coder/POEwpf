@@ -52,6 +52,7 @@ namespace POEwpf
             foreach (var ingredient in IngredientsList)
             {
                 ingredient.ResetQuantity();
+                ingredient.ResetCalories();
             }
         }
 

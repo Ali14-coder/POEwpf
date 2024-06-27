@@ -29,11 +29,14 @@ namespace POEwpf
         public List<Steps> StepsList;
 
         private window2 panel2;
-        public window5()
+        public window5(window2 Panel2)
         {
             SortedRecipesList = new SortedList<string, Recipes>(); //initializing Sorted Recipes List to SortedRecipes
                                                                    //   FilteredRecipesList = new SortedList<string, Recipes>();
             InitializeComponent();
+            panel2 = Panel2;
+
+            SortedRecipesList = panel2.GetSortedRecipesList(); //retrieves the sortedRecipesList from window2
         }
 
         private void btnBackToViewRecipe_Click(object sender, RoutedEventArgs e)
@@ -45,19 +48,25 @@ namespace POEwpf
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-           // window2 panel2 = new window2();
             int selectedIndex = lbRecipeOptions.SelectedIndex; //takes in the int of the up down scroll selection
+            
 
             if (selectedIndex == -1) //error handeling to check whether index selection is within bounds
             {
                 MessageBox.Show("Recipe number out of range. Please re-select");
                 return;
             }
-            else
+            if (lbRecipeOptions.SelectedItem ==null)
             {
-                lbDisplaySelectedRecipe.Content = "";
+                MessageBox.Show("No recipe chosen. Please select a recipe first");
+            }
 
-                Recipes selectedRecipe = SortedRecipesList[lbRecipeOptions.SelectedItem.ToString().Substring(lbRecipeOptions.SelectedItem.ToString().IndexOf('.') + 2)]; //this variable stores the recipe name by extracting the everything after the ". " and executes this when the recipe name is selected
+            string selectedItem = lbRecipeOptions.SelectedItem.ToString();
+            string recipeName = selectedItem.Substring(selectedItem.IndexOf(". ") + 2);
+
+            if(SortedRecipesList.ContainsKey(recipeName))
+            {
+                Recipes selectedRecipe = SortedRecipesList[recipeName]; //this variable stores the recipe name by extracting the everything after the ". " and executes this when the recipe name is selected
                 lbDisplaySelectedRecipe.Content = "Recipe:" + selectedRecipe.RecipeName + "\n";
                 lbDisplaySelectedRecipe.Content += selectedRecipe.PrintRecipe();
             }

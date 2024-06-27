@@ -14,6 +14,8 @@ namespace POEwpf
         public string UnitOfMeasurement { get; set; }
         public string FoodGroup { get; set; }
         public double Calories { get; set; }
+
+        public double OldCalories { get; set; }
         public string RecipeName { get; set; }
 
         public Ingredients(string ingredientName, double quantity, string unitOfMeasurement, string foodGroup, double calories, string recipeName)//assigning constructirs
@@ -24,6 +26,7 @@ namespace POEwpf
             OldQuantity = quantity;
 
             FoodGroup = foodGroup;
+            OldCalories = calories;
             Calories = calories;
 
             RecipeName = recipeName;
@@ -41,7 +44,12 @@ namespace POEwpf
 
         public void CalorieScale(double scaleFactor)
         {
-            Calories = Calories * scaleFactor;
+            Calories = OldCalories * scaleFactor;
+        }
+
+        public void ResetCalories()
+        {
+            Calories = OldCalories;
         }
     }
 }

@@ -54,9 +54,9 @@ namespace POEwpf
 
         private void btnChooseRecipe_Click(object sender, RoutedEventArgs e)
         {
-            window5 panel5 = new window5();
+            window5 panel5 = new window5(panel2);
             this.Hide();
-            panel5.Show();
+            
             panel5.lbRecipeOptions.Items.Add(""); //makes listbox empty
 
             int index = 1;
@@ -65,6 +65,8 @@ namespace POEwpf
                 panel5.lbRecipeOptions.Items.Add(index + ". " + recipeName);
                 index++;
             }
+
+            panel5.Show();
         }
 
         private void btnScale_Click(object sender, RoutedEventArgs e)
