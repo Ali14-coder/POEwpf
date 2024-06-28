@@ -156,7 +156,7 @@ Here is a summary of the changes I made:
 
 For more information on how the program operates, here is a video walkthrough of the GUI application and the code:
 
-[Link to video demonstration]([#](https://youtu.be/quHgH2b5SkM))
+# https://youtu.be/quHgH2b5SkM
 
 ---
 
