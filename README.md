@@ -1,6 +1,10 @@
 # Sanele's Recipe Application 🍽️
 
-## Overview
+- **Student Number**: ST10382076
+- **Name**: Aliziwe Qeqe
+- **Module Code**: PROG6221
+
+## Project Overview
 
 Welcome to Sanele's Recipe Application! This project is a C# application built as part of a programming module (PROG6221) at Varsity College. Below you will find a detailed description of the project, including instructions for cloning the repository, building the project, and running tests. Additionally, you will find an overview of the application's features and a summary of changes made during different parts of the project.
 
@@ -15,12 +19,6 @@ Welcome to Sanele's Recipe Application! This project is a C# application built a
 - [Part 3 Changes](#part-3-changes)
 - [Screenshots](#screenshots)
 - [Video Demonstration](#video-demonstration)
-
-## Project Overview
-
-- **Student Number**: ST10382076
-- **Name**: Aliziwe Qeqe
-- **Module Code**: PROG6221
 
 ## Cloning the Repository
 
